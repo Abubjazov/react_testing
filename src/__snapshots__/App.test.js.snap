@@ -4,5 +4,6 @@ exports[`TEST APP render App - root component 1`] = `
 <input
   placeholder="input value..."
   type="text"
+  value="input value..."
 />
 `;

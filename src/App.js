@@ -3,7 +3,17 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 export const App = () => {
-  const [data ,setData] = useState(null)
+  const [data, setData] = useState(null)
+  const [toggle, setToggle] = useState(false)
+  const [inputData, setInputData] = useState('input value...')
+
+  const onClick = () => {
+    setToggle(!toggle)
+  }
+
+  const onChange = (e) => {
+    setInputData(e.target.value)
+  }
 
   useEffect(() => {
     const stOne = setTimeout(() => {
@@ -19,8 +29,8 @@ export const App = () => {
     <div className='App'>
       {data && <div>DATA</div>}
       <h1>Goodby world</h1>
-      <button>Kick me!!!</button>
-      <input type={'text'} placeholder={'input value...'}></input>
+      <button onClick={onClick}>Kick me!!!</button>
+      <input type={'text'} placeholder={'input value...'} value={inputData} onChange={onChange} />
     </div>
   )
 }
