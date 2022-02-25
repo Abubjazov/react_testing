@@ -27,6 +27,7 @@ export const App = () => {
 
   return (
     <div className='App'>
+      {toggle && <div data-testid={'toggle-element'}>TOGGLE</div>}
       {data && <div>DATA</div>}
       <h1>Goodby world</h1>
       <button onClick={onClick}>Kick me!!!</button>

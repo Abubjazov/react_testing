@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { App } from './App'
 
 describe('TEST APP', () => {
@@ -24,5 +24,20 @@ describe('TEST APP', () => {
 
     const gwElem2 = await screen.findByText(/data/i)
     expect(gwElem2).toBeInTheDocument()
+  })
+})
+
+describe('CLICK EVENT', () => {
+  test('render App - root component', () => {
+    render(<App />)
+
+    const btn = screen.getByText(/kick me/i)
+    const toggleElem = () => screen.queryByTestId('toggle-element')
+
+    expect(toggleElem()).toBeNull()
+    fireEvent.click(btn)
+    expect(toggleElem()).toBeInTheDocument()
+    fireEvent.click(btn)
+    expect(toggleElem()).toBeNull()
   })
 })
