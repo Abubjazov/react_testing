@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render App - root component 1`] = `
+exports[`TEST APP render App - root component 1`] = `
 <input
   placeholder="input value..."
   type="text"
