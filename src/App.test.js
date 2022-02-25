@@ -12,5 +12,7 @@ test('render App - root component', () => {
   expect(btn).toBeInTheDocument()
   expect(input).toBeInTheDocument()
 
+  expect(input).toMatchSnapshot()
+
   screen.debug()
 })
