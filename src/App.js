@@ -40,6 +40,7 @@ import React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import { AboutPage } from './Pages/AboutPage'
 import { MainPage } from './Pages/MainPage'
+import { Page404 } from './Pages/Page404'
 
 export const App = () => {
   return (
@@ -50,6 +51,7 @@ export const App = () => {
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/about' element={<AboutPage />} />
+        <Route path='/*' element={<Page404/>} />
       </Routes>
     </>
   )

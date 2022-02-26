@@ -17,7 +17,18 @@ describe('TEST APP', () => {
 
 		userEvent.click(mainLink)
 		expect(screen.getByTestId('main-page')).toBeInTheDocument()
+
 		userEvent.click(aboutLink)
 		expect(screen.getByTestId('about-page')).toBeInTheDocument()
+	})
+
+	test('Page 404 test', () => {
+    render(
+			<MemoryRouter initialEntries={['/randomPath']}>
+				<App />
+			</MemoryRouter>
+		)
+
+		expect(screen.getByTestId('page-404')).toBeInTheDocument()
 	})
 })
