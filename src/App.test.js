@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { App } from './App'
 
 describe('TEST APP', () => {
@@ -50,9 +51,11 @@ describe('INPUT EVENT', () => {
     const inputElem = () => screen.queryByTestId('input-element')
     expect(inputElem()).toContainHTML('input value...')
 
-    fireEvent.input(input, {
-      target: {value: 'qwerty123'}
-    })
+    // fireEvent.input(input, {
+    //   target: {value: 'qwerty123'}
+    // })
+
+    userEvent.type(input, 'qwerty123')
     expect(inputElem()).toContainHTML('qwerty123')
   })
 })
