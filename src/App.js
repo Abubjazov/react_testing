@@ -37,10 +37,20 @@
 // }
 
 import React from 'react'
-import { BrowserRouter, Routes } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { AboutPage } from './Pages/AboutPage'
+import { MainPage } from './Pages/MainPage'
 
 export const App = () => {
   return (
-    <div></div>
+    <BrowserRouter>
+      <Link to={'/'} data-testid={'main-link'}>Main</Link>
+      <Link to={'/about'} data-testid={'about-link'}>About</Link>
+
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/about' element={<AboutPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
