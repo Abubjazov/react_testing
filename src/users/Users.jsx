@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const Users = () => {
+export const Users = () => {
 	const [users, setUsers] = useState([])
 
 	const loadUsers = async () => {
@@ -15,9 +15,7 @@ const Users = () => {
 
 	return (
 		<div>
-			{users.map(user => <div key={user.id}>{user.name}</div>)}
+			{users.map(user => <div key={user.id} data-testid={'user-item'}>{user.name}</div>)}
 		</div>
 	)
 }
-
-export default Users
