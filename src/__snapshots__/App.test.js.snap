@@ -2,6 +2,7 @@
 
 exports[`TEST APP render App - root component 1`] = `
 <input
+  data-testid="input-element"
   placeholder="input value..."
   type="text"
   value="input value..."

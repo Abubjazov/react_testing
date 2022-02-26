@@ -28,7 +28,7 @@ describe('TEST APP', () => {
 })
 
 describe('CLICK EVENT', () => {
-  test('render App - root component', () => {
+  test('App - fire event', () => {
     render(<App />)
 
     const btn = screen.getByText(/kick me/i)
@@ -39,5 +39,20 @@ describe('CLICK EVENT', () => {
     expect(toggleElem()).toBeInTheDocument()
     fireEvent.click(btn)
     expect(toggleElem()).toBeNull()
+  })
+})
+
+describe('INPUT EVENT', () => {
+  test('App - fire event', () => {
+    render(<App />)
+
+    const input = screen.getByPlaceholderText(/input value/i)
+    const inputElem = () => screen.queryByTestId('input-element')
+    expect(inputElem()).toContainHTML('input value...')
+
+    fireEvent.input(input, {
+      target: {value: 'qwerty123'}
+    })
+    expect(inputElem()).toContainHTML('qwerty123')
   })
 })

@@ -31,7 +31,7 @@ export const App = () => {
       {data && <div>DATA</div>}
       <h1>Goodby world</h1>
       <button onClick={onClick}>Kick me!!!</button>
-      <input type={'text'} placeholder={'input value...'} value={inputData} onChange={onChange} />
+      <input type={'text'} placeholder={'input value...'} value={inputData} onChange={onChange} data-testid={'input-element'}/>
     </div>
   )
 }
