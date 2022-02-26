@@ -1,5 +1,4 @@
-import { fireEvent, getDefaultNormalizer, render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { render, screen } from '@testing-library/react'
 import axios from 'axios'
 
 import { Users } from './Users'
