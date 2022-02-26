@@ -38,19 +38,23 @@
 
 import React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
-import { AboutPage } from './Pages/AboutPage'
-import { MainPage } from './Pages/MainPage'
-import { Page404 } from './Pages/Page404'
+
+import { AboutPage, MainPage, Page404, UserDetailsPage } from './Pages'
+import { Users } from './users/Users'
+
 
 export const App = () => {
   return (
     <>
       <Link to={'/'} data-testid={'main-link'}>Main</Link>
       <Link to={'/about'} data-testid={'about-link'}>About</Link>
+      <Link to={'/users'} data-testid={'users-link'}>Users</Link>
 
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/about' element={<AboutPage />} />
+        <Route path='/users' element={<Users />} />
+        <Route path='/users/:id' element={<UserDetailsPage />} />
         <Route path='/*' element={<Page404/>} />
       </Routes>
     </>
