@@ -38,7 +38,7 @@ describe('Render Users Test', () => {
 
 	test('should get data with correct values', async () => {
 		get.mockReturnValue(response)
-		render(renderWithRouter(<Users />))
+		renderWithRouter(<Users />)
 
 		const users = await screen.findAllByTestId('user-item')
 
@@ -48,7 +48,7 @@ describe('Render Users Test', () => {
 
 	test('redirect to user details page', async () => {
 		get.mockReturnValue(response)
-		render(renderWithRouter(null, '/users'))
+		renderWithRouter(null, '/users')
 		const users = await screen.findAllByTestId('user-item')
 
 		userEvent.click(users[0])
