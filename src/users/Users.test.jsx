@@ -1,11 +1,14 @@
 import { render, screen } from '@testing-library/react'
-import axios from 'axios'
+import userEvent from '@testing-library/user-event'
+import { MemoryRouter, Route, Routes } from 'react-router-dom'
+import { get } from 'axios'
 
 import { Users } from './Users'
+import { MainPage, UserDetailsPage } from '../Pages'
 
 jest.mock('axios')
 
-describe('TEST USERS', () => {
+describe('Render Users Test', () => {
 	let response
 
 	beforeEach(() => {
@@ -30,13 +33,21 @@ describe('TEST USERS', () => {
 		}
 	})
 
-  test('render Users - component', async () => {
-		axios.get.mockReturnValue(response)
-    render(<Users />)
+	afterEach(() => {
+		jest.clearAllMocks()
+	})
+
+	test('should get data with correct values', async () => {
+		get.mockReturnValue(response)
+		render(
+			<MemoryRouter>
+				<Users />
+			</MemoryRouter>
+		)
 
 		const users = await screen.findAllByTestId('user-item')
 
+		expect(get).toBeCalledTimes(1)
 		expect(users.length).toBe(3)
-		expect(axios.get).toBeCalledTimes(1)
 	})
 })
