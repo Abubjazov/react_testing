@@ -54,13 +54,11 @@ describe('Render Users Test', () => {
 	test('redirect to user details page', async () => {
 		get.mockReturnValue(response)
 		render(
-			<MemoryRouter>
-			<Routes>
-				<Route path='/' element={<MainPage />} />
-				<Route path='/users' element={<Users />} />
-        <Route path='/users/:id' element={<UserDetailsPage />} />
-			</Routes>
-				<Users />
+			<MemoryRouter initialEntries={['/users']}>
+				<Routes>
+					<Route path='/users' element={<Users />} />
+					<Route path='/users/:id' element={<UserDetailsPage />} />
+				</Routes>
 			</MemoryRouter>
 		)
 		const users = await screen.findAllByTestId('user-item')
