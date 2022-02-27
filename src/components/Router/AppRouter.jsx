@@ -1,4 +1,3 @@
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import { AboutPage, MainPage, Page404, UserDetailsPage } from '../Pages'

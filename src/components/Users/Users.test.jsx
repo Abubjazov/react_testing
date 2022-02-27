@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { screen } from '@testing-library/react'
 import { get } from 'axios'
 
 import { Users } from './Users'
