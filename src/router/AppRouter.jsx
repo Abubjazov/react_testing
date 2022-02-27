@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import { AboutPage, MainPage, Page404, UserDetailsPage } from '../Pages'
-import { Users } from '../users/Users'
+import { Users } from '../Users/Users'
 
 export const AppRouter = () => {
 	return (

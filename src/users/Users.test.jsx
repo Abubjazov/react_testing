@@ -1,11 +1,9 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { get } from 'axios'
 
 import { Users } from './Users'
-import { UserDetailsPage } from '../Pages'
-import { AppRouter } from '../router/AppRouter'
+import { renderWithRouter } from '../tests/helpers/renderWithRouter'
 
 jest.mock('axios')
 
@@ -40,11 +38,7 @@ describe('Render Users Test', () => {
 
 	test('should get data with correct values', async () => {
 		get.mockReturnValue(response)
-		render(
-			<MemoryRouter>
-				<Users />
-			</MemoryRouter>
-		)
+		render(renderWithRouter(<Users />))
 
 		const users = await screen.findAllByTestId('user-item')
 
@@ -54,11 +48,7 @@ describe('Render Users Test', () => {
 
 	test('redirect to user details page', async () => {
 		get.mockReturnValue(response)
-		render(
-			<MemoryRouter initialEntries={['/users']}>
-				<AppRouter />
-			</MemoryRouter>
-		)
+		render(renderWithRouter(null, '/users'))
 		const users = await screen.findAllByTestId('user-item')
 
 		userEvent.click(users[0])
