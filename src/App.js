@@ -37,10 +37,9 @@
 // }
 
 import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { AppRouter } from './router/AppRouter'
 
-import { AboutPage, MainPage, Page404, UserDetailsPage } from './Pages'
-import { Users } from './users/Users'
 
 
 export const App = () => {
@@ -50,13 +49,7 @@ export const App = () => {
       <Link to={'/about'} data-testid={'about-link'}>About</Link>
       <Link to={'/users'} data-testid={'users-link'}>Users</Link>
 
-      <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/users' element={<Users />} />
-        <Route path='/users/:id' element={<UserDetailsPage />} />
-        <Route path='/*' element={<Page404/>} />
-      </Routes>
+      <AppRouter />
     </>
   )
 }

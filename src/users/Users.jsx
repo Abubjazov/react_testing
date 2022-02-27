@@ -16,8 +16,8 @@ export const Users = () => {
 	}, [])
 
 	return (
-		<div>
-			{users.map(user => <Link to={`/users/${user.id}`} key={user.id} data-testid={'user-item'}>{user.name}</Link>)}
-		</div>
+		<ul>
+			{users.map(user => <li key={user.id}><Link to={`/users/${user.id}`} data-testid={'user-item'}>{user.name}</Link></li>)}
+		</ul>
 	)
 }

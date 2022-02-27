@@ -4,7 +4,8 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { get } from 'axios'
 
 import { Users } from './Users'
-import { MainPage, UserDetailsPage } from '../Pages'
+import { UserDetailsPage } from '../Pages'
+import { AppRouter } from '../router/AppRouter'
 
 jest.mock('axios')
 
@@ -55,10 +56,7 @@ describe('Render Users Test', () => {
 		get.mockReturnValue(response)
 		render(
 			<MemoryRouter initialEntries={['/users']}>
-				<Routes>
-					<Route path='/users' element={<Users />} />
-					<Route path='/users/:id' element={<UserDetailsPage />} />
-				</Routes>
+				<AppRouter />
 			</MemoryRouter>
 		)
 		const users = await screen.findAllByTestId('user-item')
