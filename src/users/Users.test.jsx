@@ -50,4 +50,22 @@ describe('Render Users Test', () => {
 		expect(get).toBeCalledTimes(1)
 		expect(users.length).toBe(3)
 	})
+
+	test('redirect to user details page', async () => {
+		get.mockReturnValue(response)
+		render(
+			<MemoryRouter>
+			<Routes>
+				<Route path='/' element={<MainPage />} />
+				<Route path='/users' element={<Users />} />
+        <Route path='/users/:id' element={<UserDetailsPage />} />
+			</Routes>
+				<Users />
+			</MemoryRouter>
+		)
+		const users = await screen.findAllByTestId('user-item')
+
+		userEvent.click(users[0])
+		expect(screen.getByTestId('user-page')).toBeInTheDocument()
+	})
 })
