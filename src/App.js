@@ -38,7 +38,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { AppRouter } from './router/AppRouter'
+import { AppRouter } from './components/Router/AppRouter'
 
 export const App = () => {
   return (

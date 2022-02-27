@@ -1,5 +1,5 @@
 import { MemoryRouter } from 'react-router-dom'
-import { AppRouter } from '../../router/AppRouter'
+import { AppRouter } from '../../components/Router/AppRouter'
 
 export const renderWithRouter = (component, initialRoute = '/') => {
 	return (

@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { get } from 'axios'
 
 import { Users } from './Users'
-import { renderWithRouter } from '../tests/helpers/renderWithRouter'
+import { renderWithRouter} from '../../tests/helpers/renderWithRouter'
 
 jest.mock('axios')
 
