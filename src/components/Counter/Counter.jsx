@@ -17,9 +17,9 @@ export const Counter = () => {
 
 	return (
 		<div>
-			<h1 date-testid={'counter-value'}>{counterValue}</h1>
-			<button date-testid={'decrement-btn'} onClick={decCounter}>Dec</button>
-			<button date-testid={'increment-btn'} onClick={incCounter}>Inc</button>
+			<h1 data-testid={'counter-value'}>{counterValue}</h1>
+			<button data-testid={'decrement-btn'} onClick={decCounter}>Dec</button>
+			<button data-testid={'increment-btn'} onClick={incCounter}>Inc</button>
 		</div>
 	)
 }
