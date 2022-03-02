@@ -1,4 +1,5 @@
 export * from './AboutPage'
 export * from './MainPage'
 export * from './UserDetailsPage'
+export * from './HelloWorld'
 export * from './Page404'
