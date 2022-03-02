@@ -4,7 +4,7 @@ export const HelloWorld = () => {
 	const [value, setValue] = useState('')
 	const [visible, setVisible] = useState(false)
 
-	const toggle = () => setVisible(!visible)
+	const toggle = () => value === 'hello' && setVisible(!visible)
 	const onChange = (e) => setValue(e.target.value)
 
 	return (
