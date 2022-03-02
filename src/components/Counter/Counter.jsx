@@ -1,3 +1,4 @@
+import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { decrement, increment } from "../../store/reducers/counterReducer"
 import { getCounterValue } from "../../store/selectors/getCounterValue/getCounterValue"
