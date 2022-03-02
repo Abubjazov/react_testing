@@ -1,4 +1,5 @@
-import { counterReducer, decrement, increment } from './counterReducer'
+import counterReducer, { decrement, increment } from "./counterReducer"
+
 
 describe('counter Reducer', () => {
 	test('increment', () => {
@@ -7,5 +8,10 @@ describe('counter Reducer', () => {
 
 	test('decrement', () => {
 		expect(counterReducer({value: 1}, decrement())).toEqual({value: 0})
+	})
+
+	test('with empty state', () => {
+		expect(counterReducer(undefined, decrement())).toEqual({value: -1})
+		expect(counterReducer(undefined, increment())).toEqual({value: 1})
 	})
 })
