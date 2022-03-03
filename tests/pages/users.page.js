@@ -24,7 +24,7 @@ class UsersPage extends Page {
     }
 
     open() {
-        return super.open('hello')
+        return super.open('users-test')
     }
 }
 
