@@ -13,7 +13,7 @@ class HelloWorldPage extends Page {
         return $('#h1')
     }
 
-    async toggleTitle (text) {
+    async toggleTitle(text) {
         await this.searchInput.setValue(text)
         await this.toggleBtn.click()
     }
