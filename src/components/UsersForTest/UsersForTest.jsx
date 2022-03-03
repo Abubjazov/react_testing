@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import User from './User'
+import { User } from './User'
+
 
 export const UsersForTest = () => {
     const [users, setUsers] = useState([])
